@@ -1,3 +1,5 @@
+// cypress/e2e/checkout-error-messages.cy.js
+
 import LoginPage from '../pages/LoginPage';
 import ProductsPage from '../pages/ProductsPage';
 import CartPage from '../pages/CartPage';
@@ -27,7 +29,7 @@ describe('Checkout Error Messages Test', () => {
 
   it('should display error messages for invalid checkout form inputs', () => {
     // Preencher o formulário de checkout com informações inválidas
-    checkoutPage.fillCheckoutInformation('John', '', ''); // Preenche apenas o primeiro nome
+    checkoutPage.fillFirstName('John'); // Preenche apenas o primeiro nome
     checkoutPage.continueCheckout();
     
     // Verificar se a mensagem de erro é exibida
