@@ -1,4 +1,3 @@
-// cypress/e2e/checkout.cy.js
 import CheckoutPage from '../pages/CheckoutPage';
 
 describe('Checkout Tests', () => {
