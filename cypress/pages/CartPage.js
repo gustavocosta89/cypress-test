@@ -23,6 +23,12 @@ class CartPage {
     // Clica no botão "Checkout"
     cy.get('[data-test="checkout"]').click();
   }
+
+  // Abre a página de checkout
+  openCheckout() {
+    // Clica no botão "Checkout" para abrir a página de checkout
+    cy.get('[data-test="checkout"]').click();
+  }
 }
 
 export default CartPage;

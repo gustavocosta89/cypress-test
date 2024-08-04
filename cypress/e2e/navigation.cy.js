@@ -1,3 +1,4 @@
+// cypress/e2e/navigation.cy.js
 import LoginPage from '../pages/LoginPage';
 import CartPage from '../pages/CartPage';
 import CheckoutPage from '../pages/CheckoutPage';
@@ -8,14 +9,14 @@ describe('Navigation Test', () => {
   const checkoutPage = new CheckoutPage();
 
   beforeEach(() => {
-    loginPage.visit();
-    loginPage.fillUsername('standard_user');
-    loginPage.fillPassword('secret_sauce');
-    loginPage.submitLogin();
+    loginPage.visit(); // Visita a página de login
+    loginPage.fillUsername('standard_user'); // Preenche o nome de usuário
+    loginPage.fillPassword('secret_sauce'); // Preenche a senha
+    loginPage.submitLogin(); // Submete o login
     
     // Adiciona um produto ao carrinho
     cartPage.addProductToCart('Sauce Labs Backpack');
-    cy.get('.shopping_cart_link').click(); // Abre o carrinho
+    cartPage.openCart(); // Abre o carrinho
 
     // Intercepta a requisição para a página do carrinho e garante que ela seja concluída
     cy.intercept('GET', '/cart.html').as('cartPage');
