@@ -2,23 +2,26 @@
 class CartPage {
   // Adiciona um produto ao carrinho
   addProductToCart(productName) {
-    // Esse método geralmente seria usado na página de produtos. Verifique se ele está sendo usado corretamente.
-    cy.contains(productName).parent().find('button[data-test="add-to-cart"]').click(); // Localiza e clica no botão "Add to Cart"
+    // Localiza e clica no botão "Add to Cart"
+    cy.contains(productName).parent().find('button[data-test="add-to-cart"]').click();
   }
 
   // Abre a página do carrinho
   openCart() {
-    cy.get('[data-test="shopping-cart-link"]').click(); // Clica no link para abrir a página do carrinho
+    // Clica no link para abrir a página do carrinho
+    cy.get('[data-test="shopping-cart-link"]').click();
   }
 
   // Verifica se o produto está no carrinho
   verifyProductInCart(productName) {
-    cy.contains(productName).should('exist'); // Verifica se o produto está presente no carrinho
+    // Verifica se o produto está presente no carrinho
+    cy.contains(productName).should('exist');
   }
 
   // Finaliza a compra (Clica no botão "Checkout")
   proceedToCheckout() {
-    cy.get('[data-test="checkout"]').click(); // Clica no botão "Checkout"
+    // Clica no botão "Checkout"
+    cy.get('[data-test="checkout"]').click();
   }
 }
 

@@ -1,3 +1,4 @@
+// cypress/pages/CheckoutPage.js
 class CheckoutPage {
   // Preenche o campo de nome
   fillFirstName(firstName) {
@@ -17,6 +18,16 @@ class CheckoutPage {
   // Clica no botão de continuar
   continueCheckout() {
     cy.get('input[data-test="continue"]').click();
+  }
+
+  // Clica no botão de finalizar
+  finishCheckout() {
+    cy.get('button[data-test="finish"]').click();
+  }
+
+  // Clica no botão de cancelar
+  cancelCheckout() {
+    cy.get('button[data-test="cancel"]').click();
   }
 }
 

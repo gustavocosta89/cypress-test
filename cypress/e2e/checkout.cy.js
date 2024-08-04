@@ -1,7 +1,10 @@
+// cypress/e2e/checkout.cy.js
 import CheckoutPage from '../pages/CheckoutPage';
+import CartPage from '../pages/CartPage';
 
 describe('Checkout Tests', () => {
   const checkoutPage = new CheckoutPage();
+  const cartPage = new CartPage();
 
   beforeEach(() => {
     cy.visit('/'); // Visita a página inicial
@@ -15,10 +18,10 @@ describe('Checkout Tests', () => {
     cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
 
     // Abre a página do carrinho
-    cy.get('a.shopping_cart_link').click();
+    cartPage.openCart();
 
     // Clica no botão de checkout
-    cy.get('button[data-test="checkout"]').click();
+    cartPage.proceedToCheckout();
   });
 
   // Testa a conclusão do processo de checkout
@@ -30,7 +33,7 @@ describe('Checkout Tests', () => {
     cy.url().should('include', '/checkout-step-two.html'); // Verifica a URL após a continuação
 
     // Verifica a presença dos botões e a continuidade do fluxo
-    cy.get('button[data-test="finish"]').click();
+    checkoutPage.finishCheckout(); // Clica no botão "Finish"
     cy.url().should('include', '/checkout-complete.html'); // Verifica a URL após finalizar o checkout
     cy.get('.complete-header').should('contain.text', 'Thank you for your order!'); // Verifica a mensagem de conclusão
   });
