@@ -1,5 +1,3 @@
-// cypress/pages/ProductsPage.js
-
 class ProductsPage {
   // Abre o carrinho de compras
   openCart() {
@@ -10,8 +8,8 @@ class ProductsPage {
   addProductToCart(productName) {
     // Formata o nome do produto para corresponder ao atributo data-test
     const formattedProductName = productName.toLowerCase().replace(/\s+/g, '-');
-    
-    // Encontra o botão de adicionar ao carrinho usando o atributo data-test
+
+    // Encontra o botão de adicionar ao carrinho usando o atributo data-test e clica nele
     cy.get(`[data-test="add-to-cart-${formattedProductName}"]`)
       .should('be.visible') // Verifica se o botão está visível
       .click(); // Clica no botão para adicionar o produto ao carrinho
@@ -21,8 +19,8 @@ class ProductsPage {
   removeProductFromCart(productName) {
     // Formata o nome do produto para corresponder ao atributo data-test
     const formattedProductName = productName.toLowerCase().replace(/\s+/g, '-');
-    
-    // Encontra o botão de remoção usando o atributo data-test
+
+    // Encontra o botão de remoção usando o atributo data-test e clica nele
     cy.get(`[data-test="remove-${formattedProductName}"]`)
       .should('be.visible') // Verifica se o botão está visível
       .click(); // Clica no botão para remover o produto do carrinho
@@ -30,7 +28,7 @@ class ProductsPage {
 
   // Verifica se um produto está no carrinho
   verifyProductInCart(productName) {
-    cy.get('.cart_item') // Seleciona o item do carrinho
+    cy.get('.cart_item') // Seleciona os itens do carrinho
       .should('contain', productName); // Verifica se o produto está presente
   }
 
@@ -54,17 +52,20 @@ class ProductsPage {
 
   // Obtém a lista de produtos na página
   getProductList() {
-    return cy.get('.inventory_item'); // Seleciona todos os itens de inventário
+    return cy.get('.inventory_item'); // Retorna todos os itens de inventário
   }
 
   // Verifica se os produtos estão ordenados por preço de baixo para cima
   verifyProductsSortedByPriceLowToHigh() {
     cy.get('.inventory_item')
       .then((items) => {
+        // Extrai os preços dos itens e os converte para números
         const prices = [...items].map(item => {
           return parseFloat(item.querySelector('.inventory_item_price').textContent.replace('$', ''));
         });
+        // Ordena os preços do menor para o maior
         const sortedPrices = [...prices].sort((a, b) => a - b);
+        // Verifica se os preços estão ordenados corretamente
         expect(prices).to.deep.equal(sortedPrices);
       });
   }

@@ -13,7 +13,7 @@ describe('Products Page Tests', () => {
     loginPage.fillPassword('secret_sauce'); // Preenche a senha
     loginPage.submitLogin(); // Submete o login
     cy.url().should('include', '/inventory.html'); // Verifica se a URL contém '/inventory.html'
-    productsPage.verifyPageTitle(); // Verifica o título da página após o login
+    productsPage.verifyPageTitle(); // Verifica o título da página de produtos após o login
   });
 
   it('should display a list of products', () => {
