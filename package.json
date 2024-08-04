@@ -1,16 +1,11 @@
 {
-  "type": "module",
-  "name": "cypress-test",
+  "name": "cypress-sauce-demo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress open"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "cypress": "^13.13.2"
   }
 }
-
