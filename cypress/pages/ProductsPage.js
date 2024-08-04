@@ -57,17 +57,20 @@ class ProductsPage {
 
   // Verifica se os produtos estão ordenados por preço de baixo para cima
   verifyProductsSortedByPriceLowToHigh() {
-    cy.get('.inventory_item')
-      .then((items) => {
+    cy.get('.inventory_item_price')
+      .then((prices) => {
         // Extrai os preços dos itens e os converte para números
-        const prices = [...items].map(item => {
-          return parseFloat(item.querySelector('.inventory_item_price').textContent.replace('$', ''));
-        });
+        const priceValues = prices.map((index, html) => parseFloat(Cypress.$(html).text().replace('$', ''))).get();
         // Ordena os preços do menor para o maior
-        const sortedPrices = [...prices].sort((a, b) => a - b);
+        const sortedPrices = [...priceValues].sort((a, b) => a - b);
         // Verifica se os preços estão ordenados corretamente
-        expect(prices).to.deep.equal(sortedPrices);
+        expect(priceValues).to.deep.equal(sortedPrices);
       });
+  }
+
+  // Ordena os produtos por preço do menor para o maior
+  sortByPriceLowToHigh() {
+    cy.get('[data-test="product-sort-container"]').select('lohi'); // Seleciona a opção de ordenação por preço do menor para o maior
   }
 }
 

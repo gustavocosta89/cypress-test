@@ -1,5 +1,3 @@
-// cypress/e2e/product-sort-by-price.cy.js
-
 import ProductsPage from '../pages/ProductsPage';
 
 describe('Product Sort by Price Test', () => {
