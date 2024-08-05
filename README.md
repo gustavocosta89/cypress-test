@@ -16,6 +16,7 @@ Objetivo: Testar o comportamento de redirecionamento ao tentar acessar páginas 
 Passos:
 •	Tentar acessar a URL protegida /inventory.html sem login.
 •	Verificar se o formulário de login é exibido.
+
 Implementação:
   1.	Criar a classe AccessPage com métodos para acessar a página sem autenticação e verificar o formulário de login.
   2.	Implementar o teste em access.cy.js.
@@ -27,6 +28,7 @@ Passos:
 •	Navegar para a página de inventário.
 •	Adicionar o produto "Sauce Labs Backpack" ao carrinho.
 •	Verificar a presença do produto no carrinho.
+
 Implementação:
   1.	Criar as classes LoginPage e ProductsPage.
   2.	Implementar o teste em add-to-cart-button.cy.js.
@@ -38,6 +40,7 @@ Passos:
 •	Navegar para a página de inventário.
 •	Adicionar o produto "Sauce Labs Backpack" ao carrinho.
 •	Verificar a presença do produto no carrinho.
+
 Implementação:
   1.	Criar as classes LoginPage e ProductsPage.
   2.	Implementar o teste em cart.cy.js.
@@ -49,6 +52,7 @@ Passos:
 •	Adicionar um produto ao carrinho e navegar para a página de checkout.
 •	Preencher parcialmente o formulário de checkout.
 •	Verificar a exibição de mensagens de erro apropriadas.
+
 Implementação:
   1.	Criar as classes LoginPage, ProductsPage, CartPage, e CheckoutPage.
   2.	Implementar o teste em checkout-error-messages.cy.js.
@@ -60,6 +64,7 @@ Passos:
 •	Adicionar um produto ao carrinho e navegar para a página de checkout.
 •	Preencher o formulário de checkout e verificar a conclusão com sucesso.
 •	Tentar continuar o checkout sem preencher o formulário e verificar as mensagens de erro.
+
 Implementação:
   1.	Criar as classes CheckoutPage e CartPage.
   2.	Implementar o teste em checkout.cy.js.
@@ -70,6 +75,7 @@ Passos:
 •	Preencher o nome de usuário e senha válidos e submeter o login.
 •	Verificar se a URL resultante contém /inventory.html.
 •	Preencher o nome de usuário e senha inválidos e verificar as mensagens de erro.
+
 Implementação:
   1.	Criar a classe LoginPage.
   2.	Implementar o teste em login.cy.js.
@@ -79,6 +85,7 @@ Objetivo: Verificar a funcionalidade de logout.
 Passos:
 •	Login com credenciais válidas.
 •	Executar o logout e verificar o redirecionamento para a página de login.
+
 Implementação:
   1.	Criar a classe LoginPage.
   2.	Implementar o teste em logout.cy.js.
@@ -89,6 +96,7 @@ Passos:
 •	Login com credenciais válidas.
 •	Adicionar um produto ao carrinho e abrir a página do carrinho.
 •	Verificar a navegação para a página de checkout.
+
 Implementação:
   1.	Criar as classes LoginPage, CartPage, e CheckoutPage.
   2.	Implementar o teste em navigation.cy.js.
@@ -98,6 +106,7 @@ Objetivo: Verificar se a página de produtos carrega dentro de um tempo razoáve
 Passos:
 •	Login com credenciais válidas.
 •	Verificar se a lista de produtos está visível dentro de um tempo limite de 10 segundos.
+
 Implementação:
   1.	Criar as classes LoginPage e ProductsPage.
   2.	Implementar o teste em page-load-time.cy.js.
@@ -107,6 +116,7 @@ Objetivo: Verificar várias funcionalidades na página de produtos.
 Passos:
 •	Login com credenciais válidas.
 •	Verificar a exibição de produtos, adição e remoção de produtos do carrinho, e detalhes do produto.
+
 Implementação:
   1.	Criar as classes LoginPage, ProductsPage, e CartPage.
   2.	Implementar o teste em products.cy.js.
@@ -116,6 +126,7 @@ Objetivo: Verificar a funcionalidade de ordenação de produtos por preço.
 Passos:
 •	Login com credenciais válidas.
 •	Verificar se os produtos estão ordenados corretamente por preço.
+
 Implementação:
   1.	Criar a classe ProductsPage.
   2.	Implementar o teste em product-sort-by-price.cy.js.
@@ -125,6 +136,7 @@ Objetivo: Verificar a funcionalidade de remoção de produtos do carrinho.
 Passos:
 •	Login com credenciais válidas.
 •	Verificar se a remoção de produtos do carrinho está funcionando corretamente.
+
 Implementação:
   1.	Criar a classe ProductsPage.
   2.	Implementar o teste em remove-from-cart.cy.js.
@@ -134,6 +146,7 @@ Objetivo: Verificar se a página de produtos é exibida corretamente em diferent
 Passos:
 •	Login com credenciais válidas.
 •	Verificar a exibição correta da página de produtos em diferentes tamanhos de tela, incluindo presets para iPhone e iPad.
+
 Implementação:
   1.	Criar a classe ProductsPage.
   2.	Implementar o teste em responsive-design.cy.js.
@@ -147,6 +160,7 @@ Passos:
 •	Adicionar um produto ao carrinho.
 •	Navegar para a página do carrinho.
 •	Verificar se o estado do carrinho é mantido após a atualização da página.
+
 Implementação:
   1.	Criar a classe LoginPage com métodos para visitar a página de login, preencher o nome de usuário, senha e submeter o login.
   2.	Criar a classe ProductsPage com métodos para adicionar produtos ao carrinho e abrir a página do carrinho.
