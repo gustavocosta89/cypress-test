@@ -1,7 +1,8 @@
+// cypress/e2e/add-to-cart-button.cy.js
 import LoginPage from '../pages/LoginPage';
 import ProductsPage from '../pages/ProductsPage';
 
-describe('Add to Cart Button Tests', () => {
+describe('Teste do Botão de Adicionar ao Carrinho', () => {
   const loginPage = new LoginPage();
   const productsPage = new ProductsPage();
 
@@ -15,7 +16,7 @@ describe('Add to Cart Button Tests', () => {
     cy.url().should('include', '/inventory.html');
   });
 
-  it('should add a product to the cart', () => {
+  it('deve adicionar um produto ao carrinho', () => {
     // Adiciona o produto ao carrinho
     productsPage.addProductToCart('Sauce Labs Backpack');
 

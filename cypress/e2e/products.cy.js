@@ -2,7 +2,7 @@ import LoginPage from '../pages/LoginPage';
 import ProductsPage from '../pages/ProductsPage';
 import CartPage from '../pages/CartPage';
 
-describe('Products Page Tests', () => {
+describe('Testes da Página de Produtos', () => {
   const loginPage = new LoginPage();
   const productsPage = new ProductsPage();
   const cartPage = new CartPage();
@@ -16,28 +16,28 @@ describe('Products Page Tests', () => {
     productsPage.verifyPageTitle();
   });
 
-  it('should display a list of products', () => {
+  it('deve exibir uma lista de produtos', () => {
     productsPage.verifyAllProductsVisible();
   });
 
-  it('should add a product to the cart', () => {
+  it('deve adicionar um produto ao carrinho', () => {
     productsPage.addProductToCart('Sauce Labs Backpack');
     cy.get('.shopping_cart_badge', { timeout: 10000 }).should('contain.text', '1');
   });
 
-  it('should remove a product from the cart', () => {
+  it('deve remover um produto do carrinho', () => {
     productsPage.addProductToCart('Sauce Labs Backpack');
     productsPage.removeProductFromCart('Sauce Labs Backpack');
     productsPage.verifyCartIsEmpty();
   });
 
-  it('should verify the product is added to the cart', () => {
+  it('deve verificar se o produto foi adicionado ao carrinho', () => {
     productsPage.addProductToCart('Sauce Labs Backpack');
     productsPage.openCart();
     cartPage.verifyProductInCart('Sauce Labs Backpack');
   });
 
-  it('should check product details', () => {
-    productsPage.getProductList().first().should('be.visible'); // Correção do erro de digitação
+  it('deve verificar detalhes do produto', () => {
+    productsPage.getProductList().first().should('be.visible');
   });
 });

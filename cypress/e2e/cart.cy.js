@@ -1,7 +1,8 @@
+// cypress/e2e/cart.cy.js
 import LoginPage from '../pages/LoginPage';
 import ProductsPage from '../pages/ProductsPage';
 
-describe('Cart Tests', () => {
+describe('Testes do Carrinho', () => {
   const loginPage = new LoginPage();
   const productsPage = new ProductsPage();
 
@@ -15,7 +16,7 @@ describe('Cart Tests', () => {
     cy.url().should('include', '/inventory.html');
   });
 
-  it('should add a product to the cart', () => {
+  it('deve adicionar um produto ao carrinho', () => {
     productsPage.addProductToCart('Sauce Labs Backpack'); // Adiciona o produto ao carrinho
     productsPage.openCart(); // Abre o carrinho
 

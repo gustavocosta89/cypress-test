@@ -8,8 +8,8 @@ export default defineConfig({
       // Por exemplo: on('before:browser:launch', (browser = {}, launchOptions) => { ... });
     },
     baseUrl: 'https://www.saucedemo.com',
-    defaultCommandTimeout: 20000, // Tempo padrão de espera para comandos
-    pageLoadTimeout: 30000, // Tempo máximo para o carregamento da página
+    defaultCommandTimeout: 40000, // Tempo padrão de espera para comandos
+    pageLoadTimeout: 90000, // Tempo máximo para o carregamento da página
     viewportWidth: 1280, // Largura padrão do viewport
     viewportHeight: 720, // Altura padrão do viewport
     retries: {

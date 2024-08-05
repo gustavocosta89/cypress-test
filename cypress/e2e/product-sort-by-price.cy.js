@@ -1,6 +1,6 @@
 import ProductsPage from '../pages/ProductsPage';
 
-describe('Product Sort by Price Test', () => {
+describe('Teste de Ordenação de Produtos por Preço', () => {
   const productsPage = new ProductsPage();
 
   beforeEach(() => {
@@ -14,7 +14,7 @@ describe('Product Sort by Price Test', () => {
     cy.url().should('include', '/inventory.html'); // Verifica a URL
   });
 
-  it('should sort products by price low to high', () => {
+  it('deve ordenar os produtos por preço do menor para o maior', () => {
     // Seleciona a opção de ordenação por preço
     productsPage.sortByPriceLowToHigh();
 

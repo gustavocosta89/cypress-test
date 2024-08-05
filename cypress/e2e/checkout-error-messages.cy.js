@@ -5,7 +5,7 @@ import ProductsPage from '../pages/ProductsPage';
 import CartPage from '../pages/CartPage';
 import CheckoutPage from '../pages/CheckoutPage';
 
-describe('Checkout Error Messages Test', () => {
+describe('Teste de Mensagens de Erro no Checkout', () => {
   const loginPage = new LoginPage();
   const productsPage = new ProductsPage();
   const cartPage = new CartPage();
@@ -27,7 +27,7 @@ describe('Checkout Error Messages Test', () => {
     cartPage.proceedToCheckout();
   });
 
-  it('should display error messages for invalid checkout form inputs', () => {
+  it('deve exibir mensagens de erro para entradas inválidas no formulário de checkout', () => {
     // Preencher o formulário de checkout com informações inválidas
     checkoutPage.fillFirstName('John'); // Preenche apenas o primeiro nome
     checkoutPage.continueCheckout();

@@ -1,7 +1,7 @@
 // cypress/e2e/login.cy.js
 import LoginPage from '../pages/LoginPage';
 
-describe('Login Tests', () => {
+describe('Testes de Login', () => {
   const loginPage = new LoginPage();
 
   beforeEach(() => {
@@ -9,7 +9,7 @@ describe('Login Tests', () => {
   });
 
   // Testa o login com credenciais válidas
-  it('should login with valid credentials', () => {
+  it('deve realizar login com credenciais válidas', () => {
     loginPage.fillUsername('standard_user'); // Preenche o nome de usuário
     loginPage.fillPassword('secret_sauce'); // Preenche a senha
     loginPage.submitLogin(); // Submete o login
@@ -17,7 +17,7 @@ describe('Login Tests', () => {
   });
 
   // Testa o login com credenciais inválidas
-  it('should fail to login with invalid credentials', () => {
+  it('deve falhar ao realizar login com credenciais inválidas', () => {
     loginPage.fillUsername('invalid_user'); // Preenche um nome de usuário inválido
     loginPage.fillPassword('invalid_password'); // Preenche uma senha inválida
     loginPage.submitLogin(); // Submete o login
