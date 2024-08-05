@@ -4,9 +4,12 @@ import LoginPage from '../pages/LoginPage';
 describe('Login Tests', () => {
   const loginPage = new LoginPage();
 
+  beforeEach(() => {
+    loginPage.visit(); // Visita a página de login
+  });
+
   // Testa o login com credenciais válidas
   it('should login with valid credentials', () => {
-    loginPage.visit(); // Visita a página de login
     loginPage.fillUsername('standard_user'); // Preenche o nome de usuário
     loginPage.fillPassword('secret_sauce'); // Preenche a senha
     loginPage.submitLogin(); // Submete o login
@@ -15,7 +18,6 @@ describe('Login Tests', () => {
 
   // Testa o login com credenciais inválidas
   it('should fail to login with invalid credentials', () => {
-    loginPage.visit(); // Visita a página de login
     loginPage.fillUsername('invalid_user'); // Preenche um nome de usuário inválido
     loginPage.fillPassword('invalid_password'); // Preenche uma senha inválida
     loginPage.submitLogin(); // Submete o login

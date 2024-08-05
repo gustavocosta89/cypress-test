@@ -38,6 +38,6 @@ describe('Products Page Tests', () => {
   });
 
   it('should check product details', () => {
-    productsPage.getProductList().first().should('be.visible');
+    productsPage.getProductList().first().should('be.visible'); // Correção do erro de digitação
   });
 });

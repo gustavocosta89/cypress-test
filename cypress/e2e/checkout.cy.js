@@ -2,7 +2,7 @@
 import CheckoutPage from '../pages/CheckoutPage';
 import CartPage from '../pages/CartPage';
 
-describe('Checkout Tests', () => {
+describe('Testes de Checkout', () => {
   const checkoutPage = new CheckoutPage();
   const cartPage = new CartPage();
 
@@ -25,7 +25,7 @@ describe('Checkout Tests', () => {
   });
 
   // Testa a conclusão do processo de checkout
-  it('should complete the checkout process', () => {
+  it('deve completar o processo de checkout', () => {
     checkoutPage.fillFirstName('John'); // Preenche o primeiro nome
     checkoutPage.fillLastName('Doe'); // Preenche o sobrenome
     checkoutPage.fillPostalCode('12345'); // Preenche o código postal
@@ -39,7 +39,7 @@ describe('Checkout Tests', () => {
   });
 
   // Testa o erro quando o formulário de checkout está incompleto
-  it('should display error when checkout form is incomplete', () => {
+  it('deve exibir erro quando o formulário de checkout está incompleto', () => {
     checkoutPage.continueCheckout(); // Tenta continuar sem preencher o formulário
     cy.url().should('include', '/checkout-step-one.html'); // Verifica se voltou para a página de checkout com erro
     cy.get('h3[data-test="error"]').should('be.visible'); // Verifica a exibição da mensagem de erro
