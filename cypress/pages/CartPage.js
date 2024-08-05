@@ -1,9 +1,8 @@
-// cypress/pages/CartPage.js
 class CartPage {
   // Adiciona um produto ao carrinho
   addProductToCart(productName) {
     // Localiza e clica no botão "Add to Cart"
-    cy.contains(productName).parent().find('button[data-test="add-to-cart"]').click();
+    cy.contains(productName).parent().find('button[data-test^="add-to-cart"]').click();
   }
 
   // Abre a página do carrinho
@@ -15,7 +14,7 @@ class CartPage {
   // Verifica se o produto está no carrinho
   verifyProductInCart(productName) {
     // Verifica se o produto está presente no carrinho
-    cy.contains(productName).should('exist');
+    cy.contains('.cart_item', productName).should('exist');
   }
 
   // Finaliza a compra (Clica no botão "Checkout")

@@ -8,39 +8,36 @@ describe('Products Page Tests', () => {
   const cartPage = new CartPage();
 
   beforeEach(() => {
-    loginPage.visit(); // Navega para a página de login
-    loginPage.fillUsername('standard_user'); // Preenche o nome de usuário
-    loginPage.fillPassword('secret_sauce'); // Preenche a senha
-    loginPage.submitLogin(); // Submete o login
-    cy.url().should('include', '/inventory.html'); // Verifica se a URL contém '/inventory.html'
-    productsPage.verifyPageTitle(); // Verifica o título da página de produtos após o login
+    loginPage.visit();
+    loginPage.fillUsername('standard_user');
+    loginPage.fillPassword('secret_sauce');
+    loginPage.submitLogin();
+    cy.url().should('include', '/inventory.html');
+    productsPage.verifyPageTitle();
   });
 
   it('should display a list of products', () => {
-    productsPage.verifyAllProductsVisible(); // Verifica se todos os produtos estão visíveis
+    productsPage.verifyAllProductsVisible();
   });
 
   it('should add a product to the cart', () => {
-    productsPage.addProductToCart('Sauce Labs Backpack'); // Adiciona o produto ao carrinho
-    cy.get('.shopping_cart_badge', { timeout: 10000 })
-      .should('contain.text', '1'); // Verifica se o ícone do carrinho mostra 1 item
+    productsPage.addProductToCart('Sauce Labs Backpack');
+    cy.get('.shopping_cart_badge', { timeout: 10000 }).should('contain.text', '1');
   });
 
   it('should remove a product from the cart', () => {
-    productsPage.addProductToCart('Sauce Labs Backpack'); // Adiciona o produto ao carrinho
-    productsPage.removeProductFromCart('Sauce Labs Backpack'); // Remove o produto do carrinho
-    productsPage.verifyCartIsEmpty(); // Verifica se o carrinho está vazio
+    productsPage.addProductToCart('Sauce Labs Backpack');
+    productsPage.removeProductFromCart('Sauce Labs Backpack');
+    productsPage.verifyCartIsEmpty();
   });
 
   it('should verify the product is added to the cart', () => {
-    productsPage.addProductToCart('Sauce Labs Backpack'); // Adiciona o produto ao carrinho
-    productsPage.openCart(); // Abre o carrinho
-    cartPage.verifyProductInCart('Sauce Labs Backpack'); // Verifica se o produto está no carrinho
+    productsPage.addProductToCart('Sauce Labs Backpack');
+    productsPage.openCart();
+    cartPage.verifyProductInCart('Sauce Labs Backpack');
   });
 
   it('should check product details', () => {
-    productsPage.getProductList()
-      .first()
-      .should('be.visible'); // Verifica se o primeiro produto está visível
+    productsPage.getProductList().first().should('be.visible');
   });
 });

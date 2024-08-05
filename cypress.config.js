@@ -9,7 +9,7 @@ export default defineConfig({
     },
     baseUrl: 'https://www.saucedemo.com',
     defaultCommandTimeout: 10000, // Tempo padrão de espera para comandos
-    pageLoadTimeout: 300000, // Tempo máximo para o carregamento da página
+    pageLoadTimeout: 60000, // Tempo máximo para o carregamento da página
     viewportWidth: 1280, // Largura padrão do viewport
     viewportHeight: 720, // Altura padrão do viewport
     retries: {
